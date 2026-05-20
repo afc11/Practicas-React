@@ -1,0 +1,1 @@
+console.log("¡Todo pronto! Proyecto inicializado con pnpm v11.1.3");
