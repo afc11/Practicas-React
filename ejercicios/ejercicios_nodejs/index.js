@@ -1,9 +1,13 @@
+import chalk from 'chalk';
+import cowsay from 'cowsay';
+import axios from 'axios';
+import { uniqueNamesGenerator, adjectives, animals } from 'unique-names-generator';
+
+
 console.log("¡Todo pronto! Proyecto inicializado con pnpm v11.1.3");
 
 
 // Ejercicio 1.
-
-import chalk from 'chalk';
 
 console.log(chalk.green('✔ Éxito: El proceso se completó correctamente.'));
 console.log(chalk.red('✖ Error: Algo salió mal en el sistema.'));
@@ -11,8 +15,6 @@ console.log(chalk.yellow('⚠ Advertencia: Revisa la configuración antes de seg
 
 
 // Ejercicio 2.
-
-import cowsay from 'cowsay';
 
 console.log(cowsay.say({
     text: "¡Hola, soy Agustín programando en Node.js!",
@@ -22,8 +24,6 @@ console.log(cowsay.say({
 
 
 // Ejercicio 3.
-
-import axios from 'axios';
 
 const pokemonName = 'pikachu';
 
@@ -47,3 +47,24 @@ axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
     .catch(error => {
         console.error(chalk.red('✖ Error al conectar con la PokeAPI:'), error.message);
     });
+
+
+// Ejercicio 5.
+
+
+console.log(chalk.magenta.bold('========================================='));
+console.log(chalk.magenta.bold(' 🎲 EJERCICIO 5: GENERACIÓN DE 5 NOMBRES '));
+console.log(chalk.magenta.bold('========================================='));
+
+const config = {
+    dictionaries: [adjectives, animals],
+    separator: '-'
+};
+
+for (let i = 1; i <= 5; i++) {
+    const randomName = uniqueNamesGenerator(config);
+    
+    console.log(`${chalk.gray(`${i}.`)} ${chalk.cyan.bold(randomName)}`);
+}
+
+console.log(chalk.magenta.bold('=========================================\n'));
