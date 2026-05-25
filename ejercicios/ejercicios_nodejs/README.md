@@ -2,6 +2,13 @@
 
 Ejercicios usando Node.js y dependencias externas.
 
+> [!WARNING]
+> #####################################################
+> 
+> Para cada instalación de dependencias usar `pnpm add ...`
+> 
+> #####################################################
+
 ## Ejercicio 0
 
 En este directorio crear:
