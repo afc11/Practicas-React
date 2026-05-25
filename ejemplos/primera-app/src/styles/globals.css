@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f4f4f4;
+}
+
+.app {
+  width: fit-content;
+  margin-inline: auto;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px;
+}
+
+.title {
+  text-align: center;
+}
+
+.card {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+}
+
+.card-content {
+  padding: 15px;
+}
