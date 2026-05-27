@@ -16,3 +16,4 @@ Configurar nuevo gestor de paquetes en reemplazo de `npm` --> [pnpm](./PNPM/READ
 
 - [Programas Node.js](./ejercicios/ejercicios_nodejs/)
 - [Tres en raya](./ejercicios/tres-en-raya)
+- [Práctica React](./ejercicios/ejercicios_react/)

@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import TarjetaPelicula from "@/components/tarjetaPelicula";
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Home</h1>
+      <Header />
 
       <main className="app">
         {PELICULAS.map((item, key) => {
