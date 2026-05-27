@@ -60,7 +60,7 @@ Cada vez que el usuario agrega algo:
 
 ## Sincronización
 
-Ejercicios usando `useReact`
+Ejercicios usando `useEffect`
 
 ### Ejercicio 1
 
