@@ -56,11 +56,11 @@ Cada vez que el usuario agrega algo:
 - mostrarlo debajo en una lista. 
 
 > [!tip]
-> A la hora de actualizar el estado con la lista usar `setLista({...lista, input})`
+> A la hora de actualizar el estado con la lista usar `setLista([...lista, input])`
 
 ## Sincronización
 
-Ejercicios usando `useReact`
+Ejercicios usando `useEffect`
 
 ### Ejercicio 1
 
