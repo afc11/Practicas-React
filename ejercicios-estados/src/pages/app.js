@@ -45,6 +45,10 @@ export default function App() {
 
       <InputEspejo />
 
+      <hr className="separador" />
+
+      <BotonMostrar />
+
     </main>
   );
 }
