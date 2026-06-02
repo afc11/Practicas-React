@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import Square from './square.js';
-import InputEspejo from './inputespejo.js';
+import Square from '.components/Square.js';
+import InputEspejo from '../components/inputespejo.js';
+import BotonMostrar from '../components/BotonMostrar.js';
+import CuadradoColor from '../components/CuadradoColor.js';
 
 export default function App() {
   const [lista, setLista] = useState([]);
@@ -49,6 +51,11 @@ export default function App() {
 
       <BotonMostrar />
 
+      <hr className="separador" />
+
+      <CuadradoColor />
+
+      
     </main>
   );
 }
