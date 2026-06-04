@@ -8,6 +8,7 @@ import CuadradoColor from '../components/CuadradoColor.js';
 import ListaTareas from '../components/ListaTareas.js'; 
 
 import MensajeCargar from '../components/MensajeCargar.js';
+import ContadorEfecto from '../components/ContadorEfecto.js';
 
 export default function App() {
   const [lista, setLista] = useState([]);
@@ -69,6 +70,10 @@ export default function App() {
       <h1>Ejercicios de useEffect</h1>
 
       <MensajeCargar />
+
+      <hr className="separador" />
+
+      <ContadorEfecto />
     
     
     </main>
