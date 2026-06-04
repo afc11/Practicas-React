@@ -9,6 +9,7 @@ import ListaTareas from '../components/ListaTareas.js';
 
 import MensajeCargar from '../components/MensajeCargar.js';
 import ContadorEfecto from '../components/ContadorEfecto.js';
+import TituloPestaña from '../components/TituloPestaña.js';
 
 export default function App() {
   const [lista, setLista] = useState([]);
@@ -75,7 +76,10 @@ export default function App() {
 
       <ContadorEfecto />
     
-    
+    <hr className="separador" />
+
+      <TituloPestaña />
+
     </main>
   );
 }
