@@ -1,9 +1,13 @@
 import { useState } from 'react';
-import Square from '.components/Square.js';
+
+// Ejercicios de useState
+import Square from '../components/square.js';
 import InputEspejo from '../components/inputespejo.js';
 import BotonMostrar from '../components/BotonMostrar.js';
 import CuadradoColor from '../components/CuadradoColor.js';
 import ListaTareas from '../components/ListaTareas.js'; 
+
+import MensajeCargar from '../components/MensajeCargar.js';
 
 export default function App() {
   const [lista, setLista] = useState([]);
@@ -20,7 +24,7 @@ export default function App() {
   return (
     <main className="contenedor-principal">
       <h1>Ejercicios de useState</h1>
-      <h2>Ejercicio 2: Array con Componente Square</h2>
+      <h2>Ejercicio 1: Array con Componente Square</h2>
 
       <div className="contenedor-botones">
         <button onClick={agregarElemento} className="btn btn-agregar">
@@ -60,6 +64,13 @@ export default function App() {
       
       <ListaTareas />
 
+      <hr className="separador" />
+
+      <h1>Ejercicios de useEffect</h1>
+
+      <MensajeCargar />
+    
+    
     </main>
   );
 }
