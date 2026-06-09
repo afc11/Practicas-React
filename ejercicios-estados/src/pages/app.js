@@ -5,11 +5,12 @@ import Square from '../components/square.js';
 import InputEspejo from '../components/inputespejo.js';
 import BotonMostrar from '../components/BotonMostrar.js';
 import CuadradoColor from '../components/CuadradoColor.js';
-import ListaTareas from '../components/ListaTareas.js'; 
+import ListaTareas from '../components/ListaTareas.js';
 
 import MensajeCargar from '../components/MensajeCargar.js';
 import ContadorEfecto from '../components/ContadorEfecto.js';
 import TituloPestaña from '../components/TituloPestaña.js';
+import ParImparEfecto from '../components/ParImparEfecto.js';
 
 export default function App() {
   const [lista, setLista] = useState([]);
@@ -39,7 +40,7 @@ export default function App() {
       </div>
 
       <h3>Tu Lista de Elementos:</h3>
-      
+
       {lista.length === 0 ? (
         <p className="texto-vacio">La lista está vacía. Tocá el botón azul.</p>
       ) : (
@@ -63,7 +64,7 @@ export default function App() {
       <CuadradoColor />
 
       <hr className="separador" />
-      
+
       <ListaTareas />
 
       <hr className="separador" />
@@ -75,10 +76,14 @@ export default function App() {
       <hr className="separador" />
 
       <ContadorEfecto />
-    
-    <hr className="separador" />
+
+      <hr className="separador" />
 
       <TituloPestaña />
+
+      <hr className="separador" />
+      
+      <ParImparEfecto />
 
     </main>
   );
