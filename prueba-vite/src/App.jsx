@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
+import SearchBar from './components/SearchBar';
+import './App.css'; 
+
 
 export default function App() {
   const [pokemones, setPokemones] = useState([]);
   const [cargando, setCargando] = useState(true);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     const obtenerPokemones = async () => {
@@ -21,23 +25,34 @@ export default function App() {
     obtenerPokemones();
   }, []);
 
-  return (
-    <main style={{ padding: '20px', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto' }}>
+  const filteredPokemons = pokemones.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+ return (
+    <main className="contenedor-principal">
       <h1>Pokédex Simple</h1>
       <hr />
+
+      <SearchBar search={search} setSearch={setSearch} />
 
       {cargando ? (
         <p>Cargando tus Pokémon favoritos...</p>
       ) : (
         <div>
-          <h3>Lista de Pokémon Iniciales:</h3>
-          <ul>
-            {pokemones.map((pokemon, index) => (
-              <li key={index} style={{ textTransform: 'capitalize', padding: '5px 0' }}>
+          <h3>Resultados de la búsqueda:</h3>
+          
+          <ul className="lista-pokemon">
+            {filteredPokemons.map((pokemon, index) => (
+              <li key={index} className="item-pokemon">
                 {pokemon.name}
               </li>
             ))}
           </ul>
+
+          {filteredPokemons.length === 0 && (
+            <p className="mensaje-vacio">No se encontraron Pokémon con ese nombre.</p>
+          )}
         </div>
       )}
     </main>

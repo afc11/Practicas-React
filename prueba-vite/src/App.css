@@ -1,0 +1,29 @@
+.contenedor-principal {
+  padding: 20px;
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lista-pokemon {
+  list-style: none;
+  padding: 0;
+}
+
+.item-pokemon {
+  text-transform: capitalize;
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.item-pokemon:hover {
+  background-color: #e0e0e0;
+}
+
+.mensaje-vacio {
+  color: gray;
+  font-style: italic;
+}
