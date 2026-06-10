@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
+import PokemonList from './components/PokemonList'
 import './App.css'; 
 
 
@@ -42,13 +43,7 @@ export default function App() {
         <div>
           <h3>Resultados de la búsqueda:</h3>
           
-          <ul className="lista-pokemon">
-            {filteredPokemons.map((pokemon, index) => (
-              <li key={index} className="item-pokemon">
-                {pokemon.name}
-              </li>
-            ))}
-          </ul>
+         <PokemonList pokemones={filteredPokemons} />
 
           {filteredPokemons.length === 0 && (
             <p className="mensaje-vacio">No se encontraron Pokémon con ese nombre.</p>

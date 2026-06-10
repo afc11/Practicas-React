@@ -27,3 +27,36 @@
   color: gray;
   font-style: italic;
 }
+
+
+.lista-pokemon {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.tarjeta-pokemon {
+  background-color: #f9f9f9;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.tarjeta-pokemon:hover {
+  transform: translateY(-3px);
+  border-color: #ffcb05; 
+  background-color: #fff;
+}
+
+.nombre-pokemon {
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #333;
+}
