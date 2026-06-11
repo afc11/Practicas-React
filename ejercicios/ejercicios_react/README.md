@@ -5,7 +5,7 @@ Crear un proyecto en react y resolver cada ejercicio en un componente por cada u
 Comando de creación de proyecto React
 
 ```sh
-npx create-next-app@latest --use-pnpm --js --no-tailwind --no-agents-md --src-dir --no-app
+pnpm create vite
 ```
 
 ## Estados
