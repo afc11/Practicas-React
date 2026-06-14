@@ -1,62 +1,82 @@
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .contenedor-principal {
-  padding: 20px;
-  font-family: sans-serif;
-  max-width: 800px;
+  padding: 40px 20px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.lista-pokemon {
-  list-style: none;
-  padding: 0;
+h1 {
+  color: #ff3333;
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 51, 51, 0.5); 
 }
 
-.item-pokemon {
-  text-transform: capitalize;
-  padding: 8px 12px;
-  margin-bottom: 5px;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+hr {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ff3333, transparent);
+  margin-bottom: 30px;
 }
 
-.item-pokemon:hover {
-  background-color: #e0e0e0;
-}
-
-.mensaje-vacio {
-  color: gray;
-  font-style: italic;
+h3 {
+  color: #ff3333;
+  font-weight: 400;
+  border-left: 3px solid #ff3333;
+  padding-left: 10px;
+  margin-bottom: 20px;
 }
 
 
 .lista-pokemon {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
   list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .tarjeta-pokemon {
-  background-color: #f9f9f9;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 25px 15px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.2s, border-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .tarjeta-pokemon:hover {
-  transform: translateY(-3px);
-  border-color: #ffcb05; 
-  background-color: #fff;
+  transform: translateY(-5px);
+  border-color: #ff3333; 
+  box-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+  background-color: #222;
 }
 
 .nombre-pokemon {
   text-transform: capitalize;
-  font-weight: bold;
-  color: #333;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+
+.mensaje-vacio {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import PokemonList from './components/PokemonList'
+import PokemonDetail from './components/PokemonDetail';
 import './App.css'; 
 
 
@@ -8,6 +9,8 @@ export default function App() {
   const [pokemones, setPokemones] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [search, setSearch] = useState('');
+
+  const [pokemonSeleccionado, setPokemonSeleccionado] = useState(null);
 
   useEffect(() => {
     const obtenerPokemones = async () => {
@@ -43,12 +46,21 @@ export default function App() {
         <div>
           <h3>Resultados de la búsqueda:</h3>
           
-         <PokemonList pokemones={filteredPokemons} />
+         <PokemonList 
+            pokemones={filteredPokemons} 
+            alSeleccionarPokemon={setPokemonSeleccionado}/>
 
           {filteredPokemons.length === 0 && (
             <p className="mensaje-vacio">No se encontraron Pokémon con ese nombre.</p>
           )}
         </div>
+      )}
+      
+      {pokemonSeleccionado && (
+        <PokemonDetail 
+          pokemon={pokemonSeleccionado} 
+          alCerrar={() => setPokemonSeleccionado(null)} 
+        />
       )}
     </main>
   );
