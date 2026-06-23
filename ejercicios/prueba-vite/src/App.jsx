@@ -12,6 +12,8 @@ export default function App() {
 
   const [pokemonSeleccionado, setPokemonSeleccionado] = useState(null);
 
+  const [page, setPage] = useState("inicio");
+
   useEffect(() => {
     const obtenerPokemones = async () => {
       try {
@@ -59,36 +61,63 @@ export default function App() {
 
   return (
     <main className="contenedor-principal">
+          
       <h1>Pokédex Simple</h1>
+
       <hr />
 
-      {misFavoritos.length > 0 && (
-        <div className="seccion-favoritos">
-          <h3>⭐ Mis Pokémon Favoritos:</h3>
-          <PokemonList
-            pokemones={misFavoritos}
-            alSeleccionarPokemon={setPokemonSeleccionado}
-            alAlternarFavorito={alternarFavorito}
-          />
-          <hr />
+      <nav className="barra-navegacion">
+        <a href="#inicio" onClick={() => setPage("inicio")} className={page === "inicio" ? "activo" : ""}>Inicio</a>
+        <a href="#pokemones" onClick={() => setPage("pokemones")} className={page === "pokemones" ? "activo" : ""}>Pokédex</a>
+        <a href="#favoritos" onClick={() => setPage("favoritos")} className={page === "favoritos" ? "activo" : ""}>Mis Favoritos ({misFavoritos.length})</a>
+      </nav>
+
+      
+      {page === "inicio" && (
+        <div>
+          <h2>Bienvenido</h2>
+          <p>Seleccioná una opción en la barra de navegación para empezar.</p>
         </div>
       )}
 
-      <SearchBar search={search} setSearch={setSearch} />
-
-      {cargando ? (
-        <p>Cargando tus Pokémon favoritos...</p>
-      ) : (
+      {page === "favoritos" && (
         <div>
-          <h3>Resultados de la búsqueda:</h3>
+          {misFavoritos.length > 0 ? (
+            <div className="seccion-favoritos">
+              <h3>⭐ Mis Pokémon Favoritos:</h3>
+              <PokemonList
+                pokemones={misFavoritos}
+                alSeleccionarPokemon={setPokemonSeleccionado}
+                alAlternarFavorito={alternarFavorito}
+              />
+              <hr />
+            </div>
+          ) : (
+            <p className="mensaje-vacio">No tenés ningún Pokémon guardado en tus favoritos todavía.</p>
+          )}
+        </div>
+      )}
 
-          <PokemonList
-            pokemones={filteredPokemons}
-            alAlternarFavorito={alternarFavorito}
-            alSeleccionarPokemon={setPokemonSeleccionado} />
+      {page === "pokemones" && (
+        <div>
+          <SearchBar search={search} setSearch={setSearch} />
 
-          {filteredPokemons.length === 0 && (
-            <p className="mensaje-vacio">No se encontraron Pokémon con ese nombre.</p>
+          {cargando ? (
+            <p>Cargando tus Pokémon favoritos...</p>
+          ) : (
+            <div>
+              <h3>Resultados de la búsqueda:</h3>
+
+              <PokemonList
+                pokemones={filteredPokemons}
+                alAlternarFavorito={alternarFavorito}
+                alSeleccionarPokemon={setPokemonSeleccionado} 
+              />
+
+              {filteredPokemons.length === 0 && (
+                <p className="mensaje-vacio">No se encontraron Pokémon con ese nombre.</p>
+              )}
+            </div>
           )}
         </div>
       )}

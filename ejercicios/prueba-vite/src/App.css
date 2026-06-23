@@ -111,3 +111,43 @@ h3 {
   color: #ffcc00;
   border-left-color: #ffcc00;
 }
+
+.barra-navegacion {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4px; 
+  border-bottom: 2px solid #ff3333; 
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.barra-navegacion a {
+  color: #888;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 10px 20px;
+  background-color: #1a1a1a; 
+  border: 2px solid #333;
+  border-bottom: none;
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px; 
+  transition: all 0.2s ease;
+  position: relative;
+  top: 2px;
+}
+
+.barra-navegacion a:hover {
+  color: #fff;
+  background-color: #262626;
+  border-color: #555;
+  border-bottom: none;
+}
+
+.barra-navegacion a.activo {
+  color: #fff;
+  background-color: #222; 
+  border-color: #ff3333; 
+  border-bottom: 2px solid #222; 
+  z-index: 2; 
+}
