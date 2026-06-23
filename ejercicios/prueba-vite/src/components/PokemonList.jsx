@@ -1,6 +1,6 @@
 import PokemonCard from './PokemonCard';
 
-export default function PokemonList({ pokemones, alSeleccionarPokemon }) {
+export default function PokemonList({ pokemones, alSeleccionarPokemon, alAlternarFavorito }) {
   return (
     <ul className="lista-pokemon">
       {pokemones.map((pokemon, index) => (
@@ -8,6 +8,7 @@ export default function PokemonList({ pokemones, alSeleccionarPokemon }) {
           key={index}
           pokemon={pokemon}
           alHacerClick={() => alSeleccionarPokemon(pokemon)}
+          alFavoritoClick={() => alAlternarFavorito(pokemon.name)}
         />
       ))}
     </ul>

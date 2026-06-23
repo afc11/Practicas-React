@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './PokemonDetail.css';
 
-export default function PokemonDetail({ pokemon, alCerrar }) {
+export default function PokemonDetail({ pokemon, alCerrar, alFavoritoClick }) {
   const [detalle, setDetalle] = useState(null);
   const [cargando, setCargando] = useState(true);
 
@@ -30,17 +30,25 @@ export default function PokemonDetail({ pokemon, alCerrar }) {
     <div className="modal-detalle">
       <div className="tarjeta-detalle">
         <button className="boton-cerrar" onClick={alCerrar}>X</button>
-        
+
         {cargando ? (
           <p>Cargando datos del Pokémon...</p>
         ) : (
           detalle && (
             <div>
               <h2 className="detalle-nombre">{detalle.name}</h2>
-              <img 
+
+              <button
+                className={`boton-favorito-detalle ${pokemon.favorite ? 'es-favorito' : ''}`}
+                onClick={alFavoritoClick}
+              >
+    {pokemon.favorite ? '⭐' : '☆'}
+              </button>
+
+              <img
                 className="detalle-imagen"
-                src={detalle.sprites.other['official-artwork'].front_default || detalle.sprites.front_default} 
-                alt={detalle.name} 
+                src={detalle.sprites.other['official-artwork'].front_default || detalle.sprites.front_default}
+                alt={detalle.name}
               />
               <div className="info-grupo">
                 <p><strong>Altura:</strong> {detalle.height / 10} m</p>

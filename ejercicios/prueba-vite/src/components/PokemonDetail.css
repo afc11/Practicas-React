@@ -114,3 +114,27 @@ tipo-grass { background-color: #4E8234; border: 1px solid #78C850; }
 .tipo-electric { background-color: #B9990C; border: 1px solid #F8D030; }
 .tipo-ground { background-color: #A98C22; border: 1px solid #E0C068; }
 .tipo-fairy { background-color: #B56576; border: 1px solid #EE99AC; }
+
+.boton-favorito-detalle {
+  position: absolute;
+  top: 15px;
+  left: 20px; 
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #666;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+.boton-favorito-detalle:hover {
+  transform: scale(1.2);
+}
+
+.boton-favorito-detalle.es-favorito {
+  color: #ffcc00;
+  filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.6));
+}
