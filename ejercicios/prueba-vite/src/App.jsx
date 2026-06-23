@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import PokemonList from './components/PokemonList'
-import PokemonDetail from './components/PokemonDetail';
+import PokemonInfo from './components/PokemonInfo';
 import './App.css';
 
 
@@ -123,12 +123,13 @@ export default function App() {
       )}
 
       {pokemonSeleccionado && (
-        <PokemonDetail
+        <PokemonInfo
           pokemon={pokemonSeleccionado}
           alCerrar={() => setPokemonSeleccionado(null)}
           alFavoritoClick={() => alternarFavorito(pokemonSeleccionado.name)}
         />
       )}
+      
     </main>
   );
 }

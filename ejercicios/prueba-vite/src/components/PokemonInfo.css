@@ -104,7 +104,7 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-tipo-grass { background-color: #4E8234; border: 1px solid #78C850; }
+.tipo-grass { background-color: #4E8234; border: 1px solid #78C850; }
 .tipo-poison { background-color: #6C296C; border: 1px solid #A040A0; }
 .tipo-fire { background-color: #B44B15; border: 1px solid #F08030; }
 .tipo-water { background-color: #2D52A5; border: 1px solid #6890F0; }
@@ -137,4 +137,33 @@ tipo-grass { background-color: #4E8234; border: 1px solid #78C850; }
 .boton-favorito-detalle.es-favorito {
   color: #ffcc00;
   filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.6));
+}
+
+.habilidades-contenedor {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.habilidades-contenedor strong {
+  color: #aaa;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.lista-habilidades {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.habilidad-etiqueta {
+  background-color: #252525;
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-transform: capitalize;
+  border: 1px solid #3d3d3d;
+  letter-spacing: 0.5px;
 }

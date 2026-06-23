@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './PokemonDetail.css';
+import './PokemonInfo.css';
 
 export default function PokemonDetail({ pokemon, alCerrar, alFavoritoClick }) {
   const [detalle, setDetalle] = useState(null);
@@ -27,8 +27,9 @@ export default function PokemonDetail({ pokemon, alCerrar, alFavoritoClick }) {
   if (!pokemon) return null;
 
   return (
-    <div className="modal-detalle">
-      <div className="tarjeta-detalle">
+    <div className="modal-detalle" onClick={alCerrar}>
+
+      <div className="tarjeta-detalle" onClick={(e) => e.stopPropagation()}>
         <button className="boton-cerrar" onClick={alCerrar}>X</button>
 
         {cargando ? (
@@ -54,6 +55,18 @@ export default function PokemonDetail({ pokemon, alCerrar, alFavoritoClick }) {
                 <p><strong>Altura:</strong> {detalle.height / 10} m</p>
                 <p><strong>Peso:</strong> {detalle.weight / 10} kg</p>
               </div>
+
+              <div className="habilidades-contenedor">
+                <strong>Habilidades:</strong>
+                <div className="lista-habilidades">
+                  {detalle.abilities.map((h, i) => (
+                    <span key={i} className="habilidad-etiqueta">
+                      {h.ability.name.replace('-', ' ')}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
               <div className="tipos-contenedor">
                 <strong>Tipos:</strong>
                 {detalle.types.map((t, i) => (
